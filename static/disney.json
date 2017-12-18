@@ -1,0 +1,53 @@
+{
+  "ret": true,
+  "data": {
+    "explorerHotel":[{
+      "Name":"迪士尼探索家度假酒店",
+      "imgUrl":"//img1.qunarzz.com/piao/fusion/1705/89/296ef52a08190602.jpg_298x235_dbc4c2da.jpg"
+    },{
+      "id":"0001",
+      "type":"标准客房单晚+2日门票*2",
+      "price":"3458"
+    },{
+      "id":"0002",
+      "type":"标准客房两晚打包优惠",
+      "price":"4460"
+    },{
+      "id":"0003",
+      "type":"标准客房两晚+2日门票*2",
+      "price":"5575"
+    }],
+    "hollywoodHotel":[{
+      "Name":"迪士尼好莱坞酒店",
+      "imgUrl":"//img1.qunarzz.com/piao/fusion/1705/d0/5dcc359ebef74502.jpg_298x235_4002b15d.jpg"
+    },{
+      "id":"0001",
+      "type":"标准客房单晚+2日门票*2",
+      "price":"3188"
+    },{
+      "id":"0002",
+      "type":"标准客房两晚打包优惠",
+      "price":"4208"
+    },{
+      "id":"0003",
+      "type":"标准客房两晚+2日门票*2",
+      "price":"5170"
+    }],
+    "disneylandHotel":[{
+      "Name":"香港迪士尼乐园酒店",
+      "imgUrl":"//img1.qunarzz.com/piao/fusion/1705/72/00ae2a869b53d802.jpg_604x267_325484ac.jpg"
+    },{
+      "id":"0001",
+      "type":"标准客房+乐园2日门票1张",
+      "price":"3638"
+    },{
+      "id":"0002",
+      "type":"标准客房两晚打包优惠",
+      "price":"2676"
+    },{
+      "id":"0003",
+      "type":"标准客房两晚+2日门票*2",
+      "price":"3791"
+    }]
+  }
+}
