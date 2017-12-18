@@ -1,0 +1,162 @@
+, , , , , 
+
+
+
+
+      "cityList": [
+        {
+          "title": "A",
+          "cityInfo": [
+            {
+              "pinyin": "abazangzuqiangzuzizhizhou",
+              "name": "阿坝藏族羌族自治州"
+            }, {
+              "pinyin": "akesu",
+              "name": "阿克苏地区"
+            }, {
+              "pinyin": "alaer",
+              "name": "阿拉尔"
+            }, {
+              "pinyin": "alashanmeng",
+              "name": "阿拉善盟"
+            }, {
+              "pinyin": "aletai",
+              "name": "阿勒泰"
+            }
+          ]
+        }, {
+          "title": "B",
+          "cityInfo": [
+            {
+              "pinyin": "bayannaoer",
+              "name": "巴彦淖尔"
+            }, {
+              "pinyin": "bayinguoleng",
+              "name": "巴音郭楞"
+            }, {
+              "pinyin": "bazhong",
+              "name": "巴中"
+            }, {
+              "pinyin": "baicheng",
+              "name": "白城"
+            }, {
+              "pinyin": "baisha",
+              "name": "白沙"
+            }
+          ]
+        }, {
+          "title": "C",
+          "cityInfo": [
+            {
+              "pinyin": "cangzhou",
+              "name": "沧州"
+            }, {
+              "pinyin": "changdu",
+              "name": "昌都"
+            }, {
+              "pinyin": "changji",
+              "name": "昌吉"
+            }, {
+              "pinyin": "changde",
+              "name": "常德"
+            }, {
+              "pinyin": "changzhou",
+              "name": "常州"
+            }
+          ]
+        }, {
+          "title": "D",
+          "cityInfo": [
+            {
+              "pinyin": "dazhou",
+              "name": "达州"
+            }, {
+              "pinyin": "dali",
+              "name": "大理"
+            }, {
+              "pinyin": "dalian",
+              "name": "大连"
+            }, {
+              "pinyin": "daqing",
+              "name": "大庆"
+            }, {
+              "pinyin": "datong",
+              "name": "大同"
+            }
+          ]
+        }, {
+          "title": "E",
+          "cityInfo": [
+            {
+              "pinyin": "eerduosi",
+              "name": "鄂尔多斯"
+            }, {
+              "pinyin": "ezhou",
+              "name": "鄂州"
+            }, {
+              "pinyin": "enshi",
+              "name": "恩施"
+            },
+          ]
+        }, {
+          "title": "F",
+          "cityInfo": [
+            {
+              "pinyin": "fangchenggang",
+              "name": "防城港"
+            }, {
+              "pinyin": "foshan",
+              "name": "佛山"
+            }, {
+              "pinyin": "fuzhou",
+              "name": "福州"
+            }, {
+              "pinyin": "fushun",
+              "name": "抚顺"
+            }, {
+              "pinyin": "fuzhou",
+              "name": "抚州"
+            }
+          ]
+        }, {
+          "title": "G",
+          "cityInfo": [
+            {
+              "pinyin": "gannan",
+              "name": "甘南"
+            }, {
+              "pinyin": "ganzizhou",
+              "name": "甘孜州"
+            }, {
+              "pinyin": "ganzhou",
+              "name": "赣州"
+            }, {
+              "pinyin": "gaoxiong",
+              "name": "高雄"
+            }, {
+              "pinyin": "guyuan",
+              "name": "固原"
+            }
+          ]
+        }, {
+          "title": "H",
+          "cityInfo": [
+            {
+              "pinyin": "haerbin",
+              "name": "哈尔滨"
+            }, {
+              "pinyin": "hami",
+              "name": "哈密"
+            }, {
+              "pinyin": "haibei",
+              "name": "海北藏族自治州"
+            }, {
+              "pinyin": "haidong",
+              "name": "海东地区"
+            }, {
+              "pinyin": "haikou",
+              "name": "海口"
+            }
+          ]
+        }
+      ]
