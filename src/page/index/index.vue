@@ -379,7 +379,7 @@ export default {
     position: relative;
     overflow: hidden;
     height: 1.4rem;
-    padding: .24rem .24rem .24rem 0;
+    padding: .24rem 0;
   }
   .hotlist-img-con {
     position: absolute;
