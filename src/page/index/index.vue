@@ -59,7 +59,7 @@
           <h2 class="modtitle">热销推荐</h2>
           <div class="hot-con">
             <ul class="hotlist">
-              <li class="hot-prod border-bottom" v-for="(hotItem, index) of hotList" :key="hotItem.id">
+              <li class="hot-prod border-bottom" v-for="(hotItem, index) of hotList" :key="hotItem.id" @click="handleClickSkip(hotItem.id)">
                 <a href="#">
                   <div class="hotlist-img-con">
                     <img :src="hotItem.imgSrc" class="hotlist-img">
@@ -197,6 +197,12 @@ export default {
         this.activityInfo[1] = `background: url(../../src/assets/img/index/${body.data.activity[1]}) no-repeat center center;background-size: auto 100%;`
         this.hotList = body.data.hots
         this.productList = body.data.product
+      }
+    },
+
+    handleClickSkip (id) {
+      if (id === '0001') {
+        this.$router.push({name: 'detailsPage'})
       }
     }
   },
