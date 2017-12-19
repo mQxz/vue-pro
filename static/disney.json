@@ -1,42 +1,44 @@
 {
   "ret": true,
   "data": {
-    "explorerHotel":[{
-      "Name":"迪士尼探索家度假酒店",
-      "imgUrl":"//img1.qunarzz.com/piao/fusion/1705/89/296ef52a08190602.jpg_298x235_dbc4c2da.jpg"
+    "hotelName":[{
+      "name":"迪士尼探索家度假酒店",
+      "imgUrl":"//img1.qunarzz.com/piao/fusion/1705/89/296ef52a08190602.jpg_298x235_dbc4c2da.jpg",
+      "hotelInfo":[{
+	      "id":"0001",
+	      "type":"标准客房单晚+2日门票*2",
+	      "price":"3458"
+	    },{
+	      "id":"0002",
+	      "type":"标准客房两晚打包优惠",
+	      "price":"4460"
+	    },{
+	      "id":"0003",
+	      "type":"标准客房两晚+2日门票*2",
+	      "price":"5575"
+	    }]
     },{
-      "id":"0001",
-      "type":"标准客房单晚+2日门票*2",
-      "price":"3458"
-    },{
-      "id":"0002",
-      "type":"标准客房两晚打包优惠",
-      "price":"4460"
-    },{
-      "id":"0003",
-      "type":"标准客房两晚+2日门票*2",
-      "price":"5575"
+      "name":"迪士尼好莱坞酒店",
+      "imgUrl":"//img1.qunarzz.com/piao/fusion/1705/d0/5dcc359ebef74502.jpg_298x235_4002b15d.jpg",
+      "hotelInfo":[{
+	      "id":"0001",
+	      "type":"标准客房单晚+2日门票*2",
+	      "price":"3188"
+	    },{
+	      "id":"0002",
+	      "type":"标准客房两晚打包优惠",
+	      "price":"4208"
+	    },{
+	      "id":"0003",
+	      "type":"标准客房两晚+2日门票*2",
+	      "price":"5170"
+	    }]
     }],
-    "hollywoodHotel":[{
-      "Name":"迪士尼好莱坞酒店",
-      "imgUrl":"//img1.qunarzz.com/piao/fusion/1705/d0/5dcc359ebef74502.jpg_298x235_4002b15d.jpg"
-    },{
-      "id":"0001",
-      "type":"标准客房单晚+2日门票*2",
-      "price":"3188"
-    },{
-      "id":"0002",
-      "type":"标准客房两晚打包优惠",
-      "price":"4208"
-    },{
-      "id":"0003",
-      "type":"标准客房两晚+2日门票*2",
-      "price":"5170"
-    }],
-    "disneylandHotel":[{
-      "Name":"香港迪士尼乐园酒店",
+    "disneylandHotelName":{
+      "name":"香港迪士尼乐园酒店",
       "imgUrl":"//img1.qunarzz.com/piao/fusion/1705/72/00ae2a869b53d802.jpg_604x267_325484ac.jpg"
-    },{
+    },
+    "disneylandHotel":[{
       "id":"0001",
       "type":"标准客房+乐园2日门票1张",
       "price":"3638"
@@ -48,6 +50,66 @@
       "id":"0003",
       "type":"标准客房两晚+2日门票*2",
       "price":"3791"
+    }],
+    "ticketType":[{
+      "id":"0001",
+      "name":"一日门票",
+      "imgUrl":"//img1.qunarzz.com/piao/fusion/1710/54/25ab696de64eff02.jpg_298x235_fa015a9a.jpg",
+      "ticketInfo":[{
+        "id":"0001",
+        "type":"标准票",
+        "price":"453"
+      },{
+        "id":"0002",
+        "type":"小童票",
+        "price":"322"
+      },{
+        "id":"0003",
+        "type":"长者票",
+        "price":"88"
+      }]
+    },{
+      "id":"0002",
+      "name":"两日票：7天内任2天入园",
+      "imgUrl":"//img1.qunarzz.com/piao/fusion/1711/f9/3da2deb3d82c4d02.jpg_298x235_c894b821.jpg",
+      "ticketInfo":[{
+        "id":"0001",
+        "type":"标准票",
+        "price":"527"
+      },{
+        "id":"0002",
+        "type":"小童票",
+        "price":"367"
+      },{
+        "id":"0003",
+        "type":"长者票",
+        "price":"150"
+      }]
+    }],
+    "disneyPackage":{
+      "name":"香港迪士尼玩乐套餐",
+      "imgUrl":"//img1.qunarzz.com/piao/fusion/1711/fd/c580ee440cf3a002.jpg_604x267_141921fa.jpg"
+    },
+    "disneyPackageList":[{
+      "id":"0001",
+      "type":"1日标准门票+广东至乐园巴士",
+      "price":"484"
+    },{
+      "id":"0002",
+      "type":"1日小童门票+广东至乐园巴士",
+      "price":"348"
+    },{
+      "id":"0003",
+      "type":"1日标准门票+餐券",
+      "price":"563"
+    },{
+      "id":"0004",
+      "type":"1日小童门票+餐券",
+      "price":"391"
+    },{
+      "id":"0005",
+      "type":"公主化妆及摄影套餐",
+      "price":"1545"
     }]
   }
 }
