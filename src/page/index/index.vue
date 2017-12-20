@@ -6,7 +6,9 @@
   			<i class="icon-search iconfont">&#xe68d;</i>
   			<span class="single-line">输入城市/景点/游玩主题</span>
   		</div>
-  		<div class="city">北京</div>
+      <router-link to="cityChoose">
+  		  <div class="city">{{city}}</div>
+      </router-link>
   	</header>
     <div>
     	<swiper :options="swiperOption">
@@ -143,68 +145,75 @@
 </template>
 
 <script>
-export default {
-  name: 'Index',
-  data () {
-    return {
-      swiperInfo: [],
-      iconsInfo: [],
-      activityInfo: [],
-      hotList: [],
-      productList: [],
-      listentrance: {
-        location: '定位失败',
-        sale: '5折泡温泉'
-      },
-      swiperOption: {
-        autoplay: 3000,
-        direction: 'horizontal',
-        pagination: '.swiper-pagination',
-        loop: true
-      },
-      iconsOption: {
-        pagination: '.swiper-pagination'
-      }
-    }
-  },
-
-  computed: {
-    pages () {
-      const pages = []
-      this.iconsInfo.forEach((item, index) => {
-        let page = Math.floor(index / 8)
-        if (!pages[page]) {
-          pages[page] = []
+  import { mapState } from 'vuex'
+  export default {
+    name: 'Index',
+    data () {
+      return {
+        swiperInfo: [],
+        iconsInfo: [],
+        activityInfo: [],
+        hotList: [],
+        productList: [],
+        listentrance: {
+          location: '定位失败',
+          sale: '5折泡温泉'
+        },
+        swiperOption: {
+          autoplay: 3000,
+          direction: 'horizontal',
+          pagination: '.swiper-pagination',
+          loop: true
+        },
+        iconsOption: {
+          pagination: '.swiper-pagination'
         }
-        pages[page].push(item)
-      })
-      return pages
-    }
-  },
-
-  methods: {
-    getIndexDate () {
-      this.$http.get('/static/index.json')
-        .then(this.handleGetIndexDateSucc.bind(this))
+      }
     },
 
-    handleGetIndexDateSucc (res) {
-      const body = res.body
-      if (body.data.swiper) {
-        this.swiperInfo = body.data.swiper
-        this.iconsInfo = body.data.icons
-        this.activityInfo[0] = `background: url(../../src/assets/img/index/${body.data.activity[0]}) no-repeat center center;background-size: auto 100%;`
-        this.activityInfo[1] = `background: url(../../src/assets/img/index/${body.data.activity[1]}) no-repeat center center;background-size: auto 100%;`
-        this.hotList = body.data.hots
-        this.productList = body.data.product
-      }
-    }
-  },
+    computed: {
 
-  created () {
-    this.getIndexDate()
+      // ...mapState(['city']),
+      ...mapState({
+        city: 'city'
+      }),
+
+      pages () {
+        const pages = []
+        this.iconsInfo.forEach((item, index) => {
+          let page = Math.floor(index / 8)
+          if (!pages[page]) {
+            pages[page] = []
+          }
+          pages[page].push(item)
+        })
+        return pages
+      }
+    },
+
+    methods: {
+      getIndexDate () {
+        this.$http.get('/static/index.json')
+          .then(this.handleGetIndexDateSucc.bind(this))
+      },
+
+      handleGetIndexDateSucc (res) {
+        const body = res.body
+        if (body.data.swiper) {
+          this.swiperInfo = body.data.swiper
+          this.iconsInfo = body.data.icons
+          this.activityInfo[0] = `background: url(../../src/assets/img/index/${body.data.activity[0]}) no-repeat center center;background-size: auto 100%;`
+          this.activityInfo[1] = `background: url(../../src/assets/img/index/${body.data.activity[1]}) no-repeat center center;background-size: auto 100%;`
+          this.hotList = body.data.hots
+          this.productList = body.data.product
+        }
+      }
+    },
+
+    created () {
+      this.getIndexDate()
+    }
   }
-}
 </script>
 <style scoped>
   .page-main {
@@ -252,6 +261,7 @@ export default {
   	white-space: nowrap;
   	overflow: hidden;
   	text-overflow: clip;
+    color: #fff;
   }
   .city:after {
   	position: absolute;

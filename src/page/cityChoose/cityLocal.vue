@@ -4,30 +4,39 @@
       <div class="cityarea-title border-bottom">热门城市</div>
       <div class="cityarea-content city-now border-bottom">
         <div class="cityitem-light"  v-for="(item, index) of hotCityList" :key="item.id">
-          <span class="cityitem-name ellipsis">{{item.name}}</span>
+          <span class="cityitem-name ellipsis" @click="changeCity(item.name)">{{item.name}}</span>
         </div>
       </div>
     </div>
 
-    <div class="cityarea-group" v-for="(cityItem, index) of cityList" :key="cityItem.title">
-      <div class="cityarea-title border-bottom">{{cityItem.title}}</div>
-      <div class="cityarea-content citynormal-content" v-for="(item, index) of cityItem.cityInfo">
-        <span class="cityitem-normal border-bottom ellipsis">{{item.name}}</span>
+    <div ref="cityareaCon" class="cityarea-group" v-for="(cityItem, key) of cityList" :key="key">
+      <div ref="cityareaIndex" class="cityarea-title border-bottom">{{key}}</div>
+      <div class="cityarea-content citynormal-content" v-for="item of cityItem" :key="item.id">
+        <span class="cityitem-normal border-bottom ellipsis" @click="changeCity(item.name)">{{item.name}}</span>
       </div>
     </div>
+
+    <alphabet :cityIndex="cityIndex" @touchCityIndex="handleTouchCityIndex" @touchMoveCityIndex="handleTouchMove"></alphabet>
   </div>
 </template>
 
 <script>
+  import alphabet from './alphabet.vue'
+  import { mapMutations } from 'vuex'
   export default {
     name: 'cityLocal',
     props: {
       localHotCityList: {
-        type: Array
+        type: Array,
+        required: true
       },
       localCityList: {
-        type: Array
+        type: Object,
+        required: true
       }
+    },
+    components: {
+      alphabet
     },
     computed: {
       hotCityList () {
@@ -35,22 +44,35 @@
       },
       cityList () {
         return this.localCityList
+      },
+      cityIndex () {
+        const cityIndexArr = []
+        for (const key in this.cityList) {
+          cityIndexArr.push(key)
+        }
+        return cityIndexArr
       }
+    },
+    methods: {
+      handleTouchCityIndex (index) {
+        const sTop = this.$refs.cityareaCon[index].offsetTop - 44
+        this.$emit('changeScrollTop', sTop)
+      },
+      handleTouchMove (step) {
+        const sTop = this.$refs.cityareaCon[step].offsetTop - 44
+        this.$emit('changeScrollTop', sTop)
+      },
+      ...mapMutations({
+        changeCity: 'changeCity'
+      })
+      // handleCityChange (city) {
+        // this.$store.commit('changeCity', city)
+      // }
     }
   }
 </script>
 
 <style scoped>
-  .border-bottom:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: #c9cccd;
-    width: 100%;
-    height: 1px;
-    transform: scaleY(0.5);
-  }
   .cityarea-title {
     position: relative;
     line-height: .54rem;

@@ -9,25 +9,32 @@
       </div>
     </div>
 
-    <div class="cityarea-group" v-for="(cityItem, index) of cityList" :key="cityItem.title">
-      <div class="cityarea-title border-bottom">{{cityItem.title}}</div>
-      <div class="cityarea-content citynormal-content" v-for="(item, index) of cityItem.cityInfo">
+    <div ref="cityareaCon" class="cityarea-group" v-for="(cityItem, key) of cityList" :key="key">
+      <div class="cityarea-title border-bottom">{{key}}</div>
+      <div class="cityarea-content citynormal-content" v-for="item of cityItem" :key="item.id">
         <span class="cityitem-normal border-bottom ellipsis">{{item.name}}</span>
       </div>
     </div>
+    <alphabet :cityIndex="cityIndex" @touchCityIndex="handleTouchCityIndex"></alphabet>
   </div>
 </template>
 
 <script>
+  import alphabet from './alphabet.vue'
   export default {
     name: 'cityForeign',
     props: {
       foreignHotCityList: {
-        type: Array
+        type: Array,
+        require: true
       },
       foreignCityList: {
-        type: Array
+        type: Object,
+        require: true
       }
+    },
+    components: {
+      alphabet
     },
     computed: {
       hotCityList () {
@@ -35,6 +42,19 @@
       },
       cityList () {
         return this.foreignCityList
+      },
+      cityIndex () {
+        const cityIndexArr = []
+        for (const key in this.cityList) {
+          cityIndexArr.push(key)
+        }
+        return cityIndexArr
+      }
+    },
+    methods: {
+      handleTouchCityIndex (index) {
+        const sTop = this.$refs.cityareaCon[index].offsetTop - 44
+        this.$emit('changeScrollTop', sTop)
       }
     }
   }

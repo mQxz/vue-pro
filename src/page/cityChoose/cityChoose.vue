@@ -1,19 +1,20 @@
 <template>
   <div class="page-main">
     <header class="header">
-      <div class="back iconfont">&#xe624;</div>
+      <router-link to="/">
+        <div class="back iconfont">&#xe624;</div>
+      </router-link>
       <div class="header-title">
         <div class="header-city-con">
-          <span id="local" class="land inland" @click="handleCityTabClick" :class="{active: spanIsActive}">国内</span><span id="foreign" class="land outland" @click="handleCityTabClick" :class="{active: !spanIsActive}">海外</span>
+          <span id="local" class="land inland" @touchstart="handleCityTabTouchstart" :class="{active: spanIsActive}">国内</span><span id="foreign" class="land outland" @touchstart="handleCityTabTouchstart" :class="{active: !spanIsActive}">海外</span>
         </div>
       </div>
     </header>
-
     <div class="main">
       <div class="header-search">
-        <input type="text" :placeholder="placeholder" class="city-keyword" @focus="handleInputFocus" @blur="handleInputBlur" :class="{active: inputIsActive}">
+        <input type="text" :placeholder="placeholder" class="city-keyword" @focus="handleInputFocus" @blur="handleInputBlur" :class="{active: inputIsActive}" @input="handleInput">
       </div>
-      <div class="mainContent">
+      <div class="mainContent" v-show="mainFlag">
         <div class="cityarea-group">
           <div class="cityarea-title border-bottom">您的位置</div>
             <div class="cityarea-content city-now border-bottom">
@@ -22,18 +23,17 @@
             </div>
           </div>
         </div>
-        <city-local v-show="cityFlag" :localHotCityList="localHotCityList" :localCityList="localCityList"></city-local>
-        <city-foreign v-show="!cityFlag" :foreignHotCityList="foreignHotCityList" :foreignCityList="foreignCityList"></city-foreign>
-        <alphabet></alphabet>
+        <city-local v-show="localFlag" :localHotCityList="localHotCityList" :localCityList="localCityList" @changeScrollTop="handleChangeScrollTop"></city-local>
+        <city-foreign v-show="foreignFlag" :foreignHotCityList="foreignHotCityList" :foreignCityList="foreignCityList" @changeScrollTop="handleChangeScrollTop"></city-foreign>
       </div>
     </div>
+    <city-notice v-show="noticeFlag" :noticeRes="noticeRes"></city-notice>
   </div>
 </template>
-
 <script>
   import cityLocal from './cityLocal.vue'
   import cityForeign from './cityForeign.vue'
-  import alphabet from './alphabet.vue'
+  import cityNotice from './cityNotice.vue'
   export default {
     name: 'cityChoose',
     created () {
@@ -41,29 +41,37 @@
     },
     data () {
       return {
-        cityFlag: true,
+        localFlag: true,
+        foreignFlag: false,
         spanIsActive: true,
+        mainFlag: true,
+        noticeFlag: false,
         placeholder: '输入城市名或拼音',
         inputIsActive: false,
         localHotCityList: [],
         foreignHotCityList: [],
-        localCityList: [],
-        foreignCityList: []
+        localCityList: {},
+        foreignCityList: {},
+        localSearchList: [],
+        foreignSearchList: [],
+        noticeRes: []
       }
     },
     components: {
       cityLocal,
       cityForeign,
-      alphabet
+      cityNotice
     },
     methods: {
-      handleCityTabClick (e) {
+      handleCityTabTouchstart (e) {
         const cityType = e.target.id
         if (cityType === 'foreign') {
-          this.cityFlag = false
+          this.localFlag = false
+          this.foreignFlag = true
           this.spanIsActive = false
         } else {
-          this.cityFlag = true
+          this.localFlag = true
+          this.foreignFlag = false
           this.spanIsActive = true
         }
       },
@@ -73,7 +81,7 @@
       },
       handleInputBlur () {
         this.placeholder = '输入城市名或拼音'
-        this.inputIsActive = false
+        this.inputIsActive = this.noticeFlag = false
       },
       getPageData () {
         this.$http.get('/static/cityChoose.json')
@@ -86,12 +94,32 @@
           this.localCityList = body.data.local.cityList
           this.foreignHotCityList = body.data.foreign.hotCity
           this.foreignCityList = body.data.foreign.cityList
+          for (let item in this.localCityList) {
+            this.localCityList[item].forEach((value) => {
+              this.localSearchList.push(value)
+            })
+          }
         }
+      },
+      handleChangeScrollTop (sTop) {
+        document.body.scrollTop = document.documentElement.scrollTop = sTop
+      },
+      handleInput (e) {
+        this.noticeRes = []
+        let txt = e.target.value
+        this.noticeFlag = txt
+        this.mainFlag = !txt
+        let regStr = new RegExp(txt, 'g')
+        this.localSearchList.forEach((item) => {
+          let pinyin = item.pinyin
+          if (regStr.test(pinyin)) {
+            this.noticeRes.push(item.name)
+          }
+        })
       }
     }
   }
 </script>
-
 <style scoped>
   .border-bottom:after {
     content: '';
@@ -105,7 +133,6 @@
   }
   .page-main {
     position: absolute;
-    overflow: auto;
     top: 0;
     left: 0;
     width: 100%;
@@ -130,6 +157,7 @@
     width: 0.64rem;
     line-height: 0.86rem;
     text-align: center;
+    color: #fff;
   }
   .header-title {
     width: 100%;

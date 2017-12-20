@@ -1,39 +1,52 @@
 <template>
-  <div class="alphabet">
-    <div class="alphabet-item">A</div>
-    <div class="alphabet-item">B</div>
-    <div class="alphabet-item">C</div>
-    <div class="alphabet-item">D</div>
-    <div class="alphabet-item">E</div>
-    <div class="alphabet-item">F</div>
-    <div class="alphabet-item">G</div>
-    <div class="alphabet-item">H</div>
-    <div class="alphabet-item">J</div>
-    <div class="alphabet-item">K</div>
-    <div class="alphabet-item">L</div>
-    <div class="alphabet-item">M</div>
-    <div class="alphabet-item">N</div>
-    <div class="alphabet-item">P</div>
-    <div class="alphabet-item">Q</div>
-    <div class="alphabet-item">R</div>
-    <div class="alphabet-item">S</div>
-    <div class="alphabet-item">T</div>
-    <div class="alphabet-item">W</div>
-    <div class="alphabet-item">X</div>
-    <div class="alphabet-item">Y</div>
-    <div class="alphabet-item">Z</div>
-  </div>
+  <ul class="alphabet" ref="alphabetCon">
+    <li class="alphabet-item" v-for="item of cityLetterIndex" :key="item" @touchstart="handleTouchstart" @touchmove.prevent.stop="handleTouchMove">{{item}}</li>
+  </ul>
 </template>
 
 <script>
   export default {
-    name: 'alphabet'
+    name: 'alphabet',
+    props: {
+      cityIndex: {
+        type: Array,
+        require: true
+      }
+    },
+    computed: {
+      cityLetterIndex () {
+        return this.cityIndex
+      }
+    },
+    methods: {
+      handleTouchstart (e) {
+        this.$emit('touchCityIndex', this.getIndex(e.target))
+      },
+      getIndex (element) {
+        let elements = element.parentNode.childNodes
+        for (var i = 0; i < elements.length; i++) {
+          if (elements[i] === element) {
+            return i
+          }
+        }
+      },
+      handleTouchMove (e) {
+        let step = Math.floor((e.touches[0].clientY - this.alphabetTop) / 16)
+        step = step < 0 ? 0 : step
+        step = step > this.$refs.alphabetCon.length - 1 ? this.$refs.alphabetCon.length - 1 : step
+        this.$emit('touchMoveCityIndex', step)
+      }
+    },
+
+    updated () {
+      this.alphabetTop = this.$refs.alphabetCon.offsetTop
+    }
   }
 </script>
 <style scoped>
   .alphabet {
     position: fixed;
-    top: 157.5px;
+    top: 165px;
     right: 0;
   }
   .alphabet-item {
