@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<div class="modal-box" v-show="modal"></div>
+		<div class="modal-box" v-show="modal" @click="handleModalClick"></div>
 		
-	<div class="flexbox-wrap">
+	<div class="flexbox-wrap" v-show="footerFlex">
 		<div class="flexbox">
 			<ul class="flex-list">
 				<li class="flex-item " @click="handleClassifyClick">
@@ -21,7 +21,7 @@
 
 			<div class="classify-con" v-show="show">
 				<div class="classify-flexbox">
-					<div class="flexbox-left">
+					<div class="flexbox-left" ref="classifyBox">
 						<ul class="flexbox-left-list">
 							<li class="flexbox-left-item" v-for="item in allClassify" :key="item.id">
 							{{item.name}}<span>{{item.num}}</span>
@@ -34,18 +34,18 @@
 
 			<div class="classify-con filter-con" v-show="Isshow">
 				<div class="classify-flexbox filter-flexbox">
-					<div class="flexbox-left filter-left">
+					<div class="flexbox-left filter-left" >
 						<ul class="flexbox-left-list">
-							<li class="flexbox-left-item filter-left-item">
+							<li class="flexbox-left-item filter-left-item" @click="handleDestinationClick">
 							 目的地
 							</li>
-							<li class="flexbox-left-item filter-left-item">
+							<li class="flexbox-left-item filter-left-item" @click="handleFromplaceClick">
 							 出发地
 							</li>
 						</ul>
 					</div>
-					<div class="flexbox-right filter-right">
-						<ul class="filter-right-tolist">
+					<div class="flexbox-right filter-right" ref="filterBox">
+						<ul class="filter-right-tolist" v-show="tolist">
 							<li class="flexbox-left-item filter-right-item">
 							 全部目的地
 							</li>
@@ -54,7 +54,7 @@
 							</li>
 						</ul>
 
-						<ul class="filter-right-fromlist" >
+						<ul class="filter-right-fromlist" v-show="fromlist">
 							<li class="flexbox-left-item filter-right-item">
 							 全部出发地
 							</li>
@@ -67,12 +67,13 @@
 			</div>
 
 			<div class="classify-con sugg-con" v-show="ok">
-				 <div class="flexbox-left ">
-						<ul class="flexbox-left-list sugg-list">
-							<li class="flexbox-left-item sugg-item" v-for="item in suggInfo" :key="item.id">
-								{{item.item}}
-							</li>
-						</ul>
+				 <div class="flexbox-left " ref="lastBox">
+					<ul class="flexbox-left-list sugg-list">
+						<li class="flexbox-left-item sugg-item" v-for="item in suggInfo" :key="item.id">
+							{{item.item}}
+						</li>
+						<li class="flexbox-left-item sugg-item"></li>
+					</ul>
 				</div>
 			</div>
 
@@ -84,51 +85,113 @@
 	
 
 <script>
-  export default {
-    props: ['allClassify', 'destination', 'suggInfo'],
-    data: function () {
-      return {
-        show: false,
-        Isshow: false,
-        ok: false,
-        modal: false
+import BScroll from 'better-scroll'
+export default {
+  props: ['allClassify', 'destination', 'suggInfo'],
+  data: function () {
+    return {
+      show: false,
+      Isshow: false,
+      ok: false,
+      modal: false,
+      tolist: true,
+      fromlist: false,
+      footerFlex: false,
+      arr: []
+    }
+  },
+  methods: {
+    handleClassifyClick () {
+      this.show = !this.show
+      this.Isshow = false
+      this.ok = false
+      if (this.show && !this.Isshow && !this.ok) {
+        this.modal = true
+      } else {
+        this.modal = false
       }
     },
-    methods: {
-      handleClassifyClick () {
-        this.show = !this.show
-        this.Isshow = false
-        this.ok = false
-        if (this.show && !this.Isshow && !this.ok) {
-          this.modal = true
-        } else {
-          this.modal = false
-        }
-      },
 
-      handleChooseClick () {
-        this.Isshow = !this.Isshow
-        this.show = false
-        this.ok = false
-        if (this.Isshow && !this.show && !this.ok) {
-          this.modal = true
-        } else {
-          this.modal = false
-        }
-      },
+    handleChooseClick () {
+      this.Isshow = !this.Isshow
+      this.show = false
+      this.ok = false
+      if (this.Isshow && !this.show && !this.ok) {
+        this.modal = true
+      } else {
+        this.modal = false
+      }
+    },
 
-      handleRecommendClick () {
-        this.ok = !this.ok
-        this.show = false
-        this.Isshow = false
-        if (this.ok && !this.show && !this.Isshow) {
-          this.modal = true
-        } else {
-          this.modal = false
-        }
+    handleRecommendClick () {
+      this.ok = !this.ok
+      this.show = false
+      this.Isshow = false
+      if (this.ok && !this.show && !this.Isshow) {
+        this.modal = true
+      } else {
+        this.modal = false
+      }
+    },
+
+    handleDestinationClick () {
+      this.tolist = true
+      this.fromlist = false
+    },
+
+    handleFromplaceClick () {
+      this.fromlist = true
+      this.tolist = false
+    },
+
+    handleModalClick () {
+      this.modal = false
+      this.show = false
+      this.Isshow = false
+      this.ok = false
+    },
+
+    handleScrollChange () {
+      this.arr.push(document.body.scrollTop || document.documentElement.scrollTop)
+      let i = this.arr.length - 1
+      if (this.arr[i] < this.arr[i - 1]) {
+        this.footerFlex = true
+      } else {
+        this.footerFlex = false
       }
     }
+  },
+
+  mounted () {
+    this.scroll = new BScroll(this.$refs.classifyBox)
+    this.scrollFilter = new BScroll(this.$refs.filterBox)
+    this.scrollLast = new BScroll(this.$refs.lastBox)
+    window.addEventListener('scroll', this.handleScrollChange)
+  },
+
+  watch: {
+    allClassify () {
+      this.$nextTick(() => {
+        this.scroll.refresh()
+      })
+    },
+    destination () {
+      this.$nextTick(() => {
+        this.scrollFilter.refresh()
+      })
+    },
+    suggInfo () {
+      this.$nextTick(() => {
+        this.scrollLast.refresh()
+      })
+    }
+  },
+
+  beforeDestroy () {
+    document.body.scroll = document.documentElement.scrollTop = 0
+    alert(123)
   }
+}
 </script>
 
 <style scoped>
@@ -139,7 +202,7 @@
 		position: fixed;
 		left: 0;
 		bottom: 0;
-		background: rgba(0,0,0,.8);
+		background: rgba(0,0,0,.45);
 	}
 	.flexbox-wrap {
 		width: 100%;
@@ -230,14 +293,13 @@
 	.filter-left-item {
 		width: 1.6rem;
 	}
-	.fiter-right {
+	.filter-right {
 		position: relative;
+		height: 5.25rem;
+		overflow: hidden;
 	}
 	.filter-right-tolist {
-		overflow: hidden;
-		height: 5.25rem;
 		position: absolute;
-		display: block;
 
 	}
 	.filter-right-item {
@@ -247,7 +309,6 @@
 		overflow: hidden;
 		height: 2.25rem;
 		position: absolute;
-		display: none;
 	}
 	.sugg-list {
 		text-align: center;

@@ -55,21 +55,14 @@ export default{
       this.suggInfo = body.data.sugg
     },
 
-    handleChange: function (res) {
+    handleChange (res) {
       console.log(res)
     }
   },
 
   created () {
     this.getTourData()
-  },
-
-  mounted () {
-    window.addEventListener('scroll', this.handleScrollChange)
-  },
-
-  beforeDestroy () {}
-
+  }
 }
 </script>
 <style scoped>
@@ -89,6 +82,7 @@ export default{
 		width: .64rem;
 		line-height: .88rem;
 		color: #fff;
+		text-align: center;
 	}
 	.search {
 		flex: 1;
