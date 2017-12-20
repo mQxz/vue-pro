@@ -1,25 +1,7 @@
 <template>
   <div class="page-main">
-    <div style="height:60px;font-size:0;background-color:#000">
-      <div class="ceiling">
-        <div class="logo">
-          <img style="width:40px;height:40px" src="//source.qunarzz.com/site/images/wap/touch/images/v2/images1x/top-logo.png">
-        </div>
-        <div class="ceiling-con">
-          <div class="ceiling-title">去哪儿旅行</div>
-          <div style="color: #c4c4c4;line-height:20px">超过<span style="font-size:14px;color:#fab400;font-weight:bold">4.6亿</span>人的聪明选择</div>
-        </div>
-        <div class="download">
-          下载客户端
-        </div>
-        <div id="closeDiv" style="position:absolute;top:5px;right:5px;width:20px;height:20px"><img style="width:100%;height:100%" src="//source.qunarzz.com/site/images/wap/touch/images/v2/images1x/modifydelete.png"></div>
-      </div>
-    </div>
-    <header class="header">
-      <div class="back iconfont">&#xe624;</div>
-      <div class="title">香港迪士尼乐园</div>
-      <router-link to="/" class="to-index"><i class="iconfont">&#xe611;</i><span>首页</span></router-link>
-    </header>
+    <download></download>
+    <disneyheader></disneyheader>
     <div class="disney-main">
       <div class="banner">
         <img src="//img1.qunarzz.com/piao/fusion/1712/26/8e023c469106ea02.jpg_640x330_5c89ce09.jpg" alt="">
@@ -27,32 +9,50 @@
       <div class="nav">
         <div class="nav-bg">
           <ul class="nav-list">
-            <li><span>产品推荐</span></li>
-            <li><span>全新酒店</span></li>
-            <li><span>漫威主题</span></li>
-            <li><span>奇妙体验</span></li>
-            <li><span>无忧行程</span></li>
+            <li v-for="(tab,index) in tabsName" class="nav-item"><span @click="tabSwitch(index)" :class="{active:tab.isActive}">{{tab.name}}</span></li>
           </ul>
         </div>
       </div>
-      <div class="group">
+      <div class="group" style="display: block;">
         <hotel :hotelName="hotelName" :disneylandHotelInfo="disneylandHotelInfo" :disneylandHotelName="disneylandHotelName"></hotel>
         <happy :ticketType="ticketType" :disneyPackage="disneyPackage" :disneyPackageList="disneyPackageList"></happy>
+        <food :mealPackage="mealPackage"></food>
+      </div>
+      <div class="group" style="display: none;">
+        <food :mealPackage="mealPackage"></food>
+      </div>
+      <div class="group mt" style="display: none;">
+        <happy :ticketType="ticketType" :disneyPackage="disneyPackage" :disneyPackageList="disneyPackageList"></happy>
+      </div>
+      <div class="group" style="display: none;">
+        <food :mealPackage="mealPackage"></food>
+      </div>
+      <div class="group" style="display: none;">
+        <hotel :hotelName="hotelName" :disneylandHotelInfo="disneylandHotelInfo" :disneylandHotelName="disneylandHotelName"></hotel>
       </div>
     </div>
+    <disneyfooter></disneyfooter>
   </div>
 </template>
 
 <script>
-  import Hotel from './hotel'
-  import Happy from './happy'
+  import Download from './download'
+  import Disneyheader from './header'
+  import Hotel from './pro-recommendation/hotel'
+  import Happy from './pro-recommendation/happy'
+  import Food from './pro-recommendation/food'
+  import Disneyfooter from './footer'
 
   export default {
     name: 'Disney',
 
     components: {
+      Download,
+      Disneyheader,
       Hotel,
-      Happy
+      Happy,
+      Food,
+      Disneyfooter
     },
 
     data () {
@@ -62,12 +62,49 @@
         disneylandHotelName: {},
         ticketType: [],
         disneyPackage: {},
-        disneyPackageList: []
+        disneyPackageList: [],
+        mealPackage: [],
+        tabsName: [{
+          name: '产品推荐',
+          isActive: true,
+          activeColor: '#c16800'
+        }, {
+          name: '全新酒店',
+          isActive: false,
+          activeColor: '#c0250c'
+        }, {
+          name: '漫威主题',
+          isActive: false,
+          activeColor: '#0180db'
+        }, {
+          name: '奇妙体验',
+          isActive: false,
+          activeColor: '#7916a5'
+        }, {
+          name: '无忧行程',
+          isActive: false,
+          activeColor: '#2c810e'
+        }],
+        active: false
       }
     },
     methods: {
+      tabSwitch (tabindex) {
+        const tabgroup = document.querySelectorAll('.group')
+        const navitem = document.querySelectorAll('.nav-item')
+        const len = tabgroup.length
+        for (var i = 0; i < len; i++) {
+          tabgroup[i].style.display = 'none'
+          this.tabsName[i].isActive = false
+          navitem[i].style.color = '#fff'
+        }
+        navitem[tabindex].style.color = this.tabsName[tabindex].activeColor
+        this.tabsName[tabindex].isActive = true
+        tabgroup[tabindex].style.display = 'block'
+      },
+
       getIndexData () {
-        this.$http.get('/static/disney.json').then(this.handleGetDataSucc.bind(this))
+        this.$http.get('/static/disneyProductRecommendation.json').then(this.handleGetDataSucc.bind(this))
       },
 
       handleGetDataSucc (res) {
@@ -79,6 +116,7 @@
           this.ticketType = body.data.ticketType
           this.disneyPackage = body.data.disneyPackage
           this.disneyPackageList = body.data.disneyPackageList
+          this.mealPackage = body.data.mealPackage
         }
       }
     },
@@ -94,87 +132,6 @@
     clear: both;
     content: "";
     visibility: hidden;
-    height: 0;
-  }
-  .logo{
-    width: 60px;
-    text-align: center;
-    position: absolute;
-  }
-  .ceiling{
-    position: fixed;
-    top: 0;
-    z-index: 5;
-    height: 60px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    font-size: 12px;
-    padding: 10px 0;
-    box-sizing: border-box;
-  }
-  .ceiling-con{
-    position: absolute;
-    left: 60px;
-  }
-  .ceiling-title{
-    font-size: 22px;
-    color: #25A4BB;
-    font-weight: bold;
-    line-height: 22px;
-  }
-  .download{
-    width: 80px;
-    height: 33px;
-    background-color: #f4b000;
-    font-size: 14px;
-    text-align: center;
-    border-radius: 5px;
-    color: #fff;
-    line-height: 33px;
-    font-weight: bold;
-    position: absolute;
-    top: 12px;
-    right: 44px;
-    box-shadow: 0 0.06rem #e86708;
-  }
-  .header{
-    display: flex;
-    background: #1ba9ba;
-    text-align: center;
-    color: #fff;
-    border-bottom: #1b7a8b .02rem solid;
-    height: .88rem;
-    line-height: .88rem;
-  }
-  .header .back{
-    width: 0.88rem;
-    line-height: 0.88rem;
-    text-align: center;
-    font-size: 0.3rem;
-    font-weight: 900;
-    color: #fff;
-  }
-  .header .title{
-    color: #fff;
-    flex: 1;
-    font-size: 0.32rem;
-  }
-  .header .to-index{
-    width: .88rem;
-    height: .87rem;
-    color: #fff;
-    position: relative;
-  }
-  .to-index i{
-    display: block;
-    height: auto;
-    padding-top: .1rem;
-    line-height: 1;
-  }
-  .to-index span{
-    position: absolute;
-    left: 0.16rem;
-    top:0.18rem;
     height: 0;
   }
   .disney-main{
@@ -215,24 +172,26 @@
     width: .6rem;
     height: .64rem;
     font-size: .3rem;
-    line-height: .32rem;  
-  }
-  .nav-list li:nth-of-type(1) span{
-    color: #c16800;
+    line-height: .32rem;
+    padding: 0.2rem;
   }
   .nav-list li:nth-of-type(1){
-    margin-top: 8%;
+    margin-top: 5%;
+    color: #c16800;
   }
   .nav-list li:nth-of-type(2){
-    margin-top: 6.4%;
+    margin-top: 3.4%;
   }
   .nav-list li:nth-of-type(3){
-    margin-top: 4.4%;
+    margin-top: 1.4%;
   }
   .nav-list li:nth-of-type(4){
-    margin-top: 6.4%;
+    margin-top: 3.4%;
   }
   .nav-list li:nth-of-type(5){
-    margin-top: 8%;
+    margin-top: 5%;
+  }
+  .mt{
+    margin-top: 0.4rem;
   }
 </style>

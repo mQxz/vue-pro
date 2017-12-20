@@ -1,48 +1,49 @@
 <template>
-  <div class="happy">
-    <div class="happy-title-img">
-      <img src="//img1.qunarzz.com/piao/fusion/1705/1b/3ecc7df173c43d02.png" alt="">
-    </div>
-    <div class="happy-list clearfix">
-      <div class="happy-item" v-for="nameandimg in ticketType">
-        <div class="happy-item-info">
-          <div class="happy-imgcon">
+  <div class="hotel">
+    <div class="hotel-title-img">
+      <img src="//img1.qunarzz.com/piao/fusion/1712/d4/f8cf91f0b7cb902.png" alt="">
+  	</div>
+  	<div class="hotel-list clearfix">
+      <div class="hotel-item" v-for="nameandimg in hotelName" :key="nameandimg.id">
+        <div class="hotel-item-info">
+          <div class="hotel-imgcon">
             <img :src="nameandimg.imgUrl" alt="">
           </div>
-          <p>{{nameandimg.name}}</p>
+          <p class="ellipsis">{{nameandimg.name}}</p>
         </div>
-        <ul class="ticket-type-list">
-          <li v-for="item in nameandimg.ticketInfo" class="ticket-type-item" :key="item.id">
+        <ul class="room-type-list">
+          <li v-for="item in nameandimg.hotelInfo" class="room-type-item" :key="item.id">
             <a href="#">
-              <p class="ticket-type">{{item.type}}</p>
-              <div class="ticket-price">
+              <p class="room-type ellipsis">{{item.type}}</p>
+              <div class="room-price">
                 <span>&yen;
-                  <span class="ticket-price-num">{{item.price}}</span>
-                  <span class="ticket-price-start">起</span>
+                  <span class="room-price-num">{{item.price}}</span>
+                  <span class="room-price-start">起</span>
                 </span>
+                <span class="room-book">预订</span>
               </div>
             </a>
           </li>
         </ul>
       </div>
     </div>
-    <div class="package-item">
-      <div class="package-item-info">
-        <div class="package-imgcon">
-          <img :src="disneyPackage.imgUrl" alt="">
+    <div class="land-item">
+      <div class="land-item-info">
+        <div class="land-imgcon">
+          <img :src="disneylandHotelName.imgUrl" alt="">
         </div>
-        <p>{{disneyPackage.name}}</p>
+        <p class="ellipsis">{{disneylandHotelName.name}}</p>
       </div>
-      <ul class="package-type-list">
-        <li v-for="item in disneyPackageList" class="ticket-type-item package-type-item" :key="item.id">
+      <ul class="landroom-type-list">
+        <li v-for="item in disneylandHotelInfo" class="room-type-item landroom-type-item" :key="item.id">
           <a href="#">
-            <p class="package-type ticket-type">{{item.type}}</p>
-            <div class="package-price">
+            <p class="landroom-type room-type ellipsis">{{item.type}}</p>
+            <div class="landroom-price">
               <span>&yen;
-                <span class="ticket-price-num">{{item.price}}</span>
-                <span class="ticket-price-start">起</span>
+                <span class="room-price-num">{{item.price}}</span>
+                <span class="room-price-start">起</span>
               </span>
-              <span class="ticket-book">预订</span>
+              <span class="room-book">预订</span>
             </div>
           </a>
         </li>
@@ -53,39 +54,46 @@
 
 <script>
   export default {
-    props: ['ticketType', 'disneyPackage', 'disneyPackageList']
+    props: ['hotelName', 'disneylandHotelInfo', 'disneylandHotelName']
   }
 </script>
 
 <style scoped>
-  .happy{
-    background-color: #ffb300;
-    padding-bottom: .26rem;
-    position: relative;
+  .clearfix:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
   }
-  .happy-title-img{
-    position: absolute;
-    top: -0.48rem; 
+  .ellipsis{
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
-  .happy-title-img img{
+  .hotel{
+    padding-bottom: .68rem;
+  }
+  .hotel-title-img img{
     width: 100%;
   }
-  .happy-list{
+  .hotel-list{
     padding: 0 0.14rem;
     margin-bottom: 0.1rem;
   }
-  .happy-item{
+  .hotel-item{
     overflow: hidden;
     float: left;
     width: 50%;
   }
-  .happy-item-info{
+  .hotel-item-info{
     overflow: hidden;
     margin: 0 .04rem;
     border-top-left-radius: .04rem;
     border-top-right-radius: .04rem;
   }
-  .happy-item-info p{
+  .hotel-item-info p{
     height: .42rem;
     background: #fe8a71;
     color: #fff;
@@ -93,47 +101,47 @@
     line-height: .42rem;
     text-align: center;
   }
-  .happy-imgcon{
+  .hotel-imgcon{
     overflow: hidden;
     width: 100%;
     height: 0;
     padding-bottom: 78.8%;
   }
-  .happy-imgcon img{
+  .hotel-imgcon img{
     width: 100%;
   }
-  .ticket-type-list{
+  .room-type-list{
     width: 100%;
   }
-  .ticket-type-item{
+  .room-type-item{
     border-bottom: .02rem dashed #e3e3e3;
     margin: 0  0.04rem;
     padding: .08rem 0;
     background: #fff;
   }
-  .ticket-type{
+  .room-type{
     margin-left: 0.1rem;
   }
-  .ticket-type{
+  .room-type{
     height: .3rem;
     color: #000;
     font-size: .26rem;
     line-height: .32rem;
     margin-bottom: 0.1rem;
   }
-  .ticket-price{
+  .room-price{
     position: relative;
     color: #fe2e1e;
     font-size: .18rem;
     text-align: right;
   }
-  .ticket-price-num{
+  .room-price-num{
     font-size: .34rem;
   }
-  .ticket-price-start{
+  .room-price-start{
     color: #666;
   }
-  .ticket-book{
+  .room-book{
     display: inline-block;
     width: .86rem;
     height: .36rem;
@@ -145,19 +153,19 @@
     border-radius: .04rem;
     margin: 0 0.1rem;
   }
-  .package-item{
+  .land-item{
     padding: 0 .18rem;
   }
-  .package-imgcon{
+  .land-imgcon{
     overflow: hidden;
     width: 100%;
     height: 0;
     padding-bottom: 44.205%;
   }
-  .package-imgcon img{
+  .land-imgcon img{
     width: 100%;
   }
-  .package-item-info p{
+  .land-item-info p{
     height: .42rem;
     background: #fe8a71;
     color: #fff;
@@ -165,19 +173,19 @@
     line-height: .42rem;
     text-align: center;
   }
-  .package-type{
+  .landroom-type{
     margin-bottom: .1rem;
     height: .34rem;
     font-size: .28rem;
     color: #000;
   }
-  .package-price{
+  .landroom-price{
     position: relative;
     color: #fe2e1e;
     font-size: .18rem;
     margin-left: 0.1rem;
   }
-  .package-type-list .ticket-book{
+  .landroom-type-list .room-book{
     position: absolute;
     right:0.04rem;
     width: 1.16rem;

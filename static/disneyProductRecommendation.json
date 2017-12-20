@@ -110,6 +110,41 @@
       "id":"0005",
       "type":"公主化妆及摄影套餐",
       "price":"1545"
+    }],
+    "mealPackage":[{
+      "id":"0001",
+      "name":"乐园精选美食套餐",
+      "imgUrl":"//img1.qunarzz.com/piao/fusion/1711/4c/085f7c44cd467c02.png_604x267_0ef17e07.png",
+      "mealPackageInfo":[{
+        "id":"0001",
+        "type":"儿童餐劵",
+        "price":"69"
+      },{
+        "id":"0002",
+        "type":"二合一餐劵",
+        "price":"110"
+      },{
+        "id":"0003",
+        "type":"三合一餐劵",
+        "price":"182"
+      }]
+    },{
+      "id":"0002",
+      "name":"乐园精选美食套餐",
+      "imgUrl":"//img1.qunarzz.com/piao/fusion/1711/6b/ce404c7608f69502.jpg_604x267_5ea846cf.jpg",
+      "mealPackageInfo":[{
+        "id":"0001",
+        "type":"大街餐厅下午茶2人套餐",
+        "price":"272"
+      },{
+        "id":"0002",
+        "type":"广场饭店午餐餐券",
+        "price":"159"
+      },{
+        "id":"0003",
+        "type":"广场饭店晚餐餐券",
+        "price":"177"
+      }]
     }]
   }
 }
