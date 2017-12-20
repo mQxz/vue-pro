@@ -7,7 +7,7 @@
         <span class="CITS">蓝森国旅</span>
       </div>
 	  </div>
-    <div>55</div>
+    <div></div>
 	</div>
 </template>
 
@@ -38,7 +38,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .container {
     background: #f5f5f5;
   }

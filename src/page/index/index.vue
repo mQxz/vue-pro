@@ -88,7 +88,7 @@
         <div class="productList">
           <div class="product-item" v-for="product of productList" :key="product.id">
             <div class="product-img-con">
-              <img :src="product.imgSrc" class="product-img">
+              <img :src="product.imgSrc" class="product-img" @click="handleSkipPage(product.id)">
             </div>
             <div class="product-info">
               <p class="product-name">{{product.title}}</p>
@@ -203,6 +203,12 @@ export default {
     handleClickSkip (id) {
       if (id === '0001') {
         this.$router.push({name: 'detailsPage'})
+      }
+    },
+
+    handleSkipPage (id) {
+      if (id === '0001') {
+        this.$router.push({name: 'hotSpring'})
       }
     }
   },
