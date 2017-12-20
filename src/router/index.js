@@ -16,7 +16,7 @@ export default new Router({
     name: 'onedayTour',
     component: OnedayTour
   }, {
-  	path: '/sky',
+    path: '/sky',
     name: 'Sky',
     component: Sky
   }]
