@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/page/index/index'
 import CityChoose from '@/page/cityChoose/cityChoose'
+import Disney from '@/page/disney/disney'
 
 Vue.use(Router)
 
@@ -15,6 +16,10 @@ export default new Router({
       path: '/cityChoose',
       name: 'cityChoose',
       component: CityChoose
+    }, {
+      path: '/disney',
+      name: 'disney',
+      component: Disney
     }
   ]
 })
