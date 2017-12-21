@@ -55,9 +55,7 @@ export default{
       this.suggInfo = body.data.sugg
     },
 
-    handleChange (res) {
-      console.log(res)
-    }
+    handleChange (res) {}
   },
 
   created () {
