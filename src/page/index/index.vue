@@ -208,7 +208,7 @@
           this.productList = body.data.product
         }
       },
-    
+
       handleClickSkip (id) {
         if (id === '0001') {
           this.$router.push({name: 'detailsPage'})
