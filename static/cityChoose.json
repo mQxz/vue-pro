@@ -1,0 +1,374 @@
+{
+  "ret": true,
+  "data": {
+    "local": {
+      "hotCity": [
+        {"id": "0001", "name": "北京"}, 
+        {"id": "0002", "name": "西安"},
+        {"id": "0003", "name": "三亚"},
+        {"id": "0004", "name": "丽江"},
+        {"id": "0005", "name": "桂林"},
+        {"id": "0006", "name": "成都"},
+        {"id": "0007", "name": "上海"},
+        {"id": "0008", "name": "西双版纳"},
+        {"id": "0009", "name": "厦门"},
+        {"id": "0010", "name": "长沙"},
+        {"id": "0011", "name": "苏州"},
+        {"id": "0012", "name": "大理"},
+        {"id": "0013", "name": "广州"},
+        {"id": "0014", "name": "杭州"},
+        {"id": "0015", "name": "昆明"},
+        {"id": "0016", "name": "重庆"}
+      ],
+      "cityList": {
+        "A": [
+          {
+            "id": "0001",
+            "pinyin": "abazangzuqiangzuzizhizhou",
+            "name": "阿坝藏族羌族自治州"
+          }, {
+            "id": "0002",
+            "pinyin": "akesu",
+            "name": "阿克苏地区"
+          }, {
+            "id": "0003",
+            "pinyin": "alaer",
+            "name": "阿拉尔"
+          }, {
+            "id": "0004",
+            "pinyin": "alashanmeng",
+            "name": "阿拉善盟"
+          }, {
+            "id": "0005",
+            "pinyin": "aletai",
+            "name": "阿勒泰"
+          }
+        ],
+        "B": [
+          {
+            "id": "0006",
+            "pinyin": "bayannaoer",
+            "name": "巴彦淖尔"
+          }, {
+            "id": "0007",
+            "pinyin": "bayinguoleng",
+            "name": "巴音郭楞"
+          }, {
+            "id": "0008",
+            "pinyin": "bazhong",
+            "name": "巴中"
+          }, {
+            "id": "0009",
+            "pinyin": "baicheng",
+            "name": "白城"
+          }, {
+            "id": "0010",
+            "pinyin": "baisha",
+            "name": "白沙"
+          }
+        ],
+        "C": [
+          {
+            "id": "0011",
+            "pinyin": "cangzhou",
+            "name": "沧州"
+          }, {
+            "id": "0012",
+            "pinyin": "changdu",
+            "name": "昌都"
+          }, {
+            "id": "0013",
+            "pinyin": "changji",
+            "name": "昌吉"
+          }, {
+            "id": "0014",
+            "pinyin": "changde",
+            "name": "常德"
+          }, {
+            "id": "0015",
+            "pinyin": "changzhou",
+            "name": "常州"
+          }
+        ],
+        "D" : [
+          {
+            "id": "0016",
+            "pinyin": "dazhou",
+            "name": "达州"
+          }, {
+            "id": "0017",
+            "pinyin": "dali",
+            "name": "大理"
+          }, {
+            "id": "0018",
+            "pinyin": "dalian",
+            "name": "大连"
+          }, {
+            "id": "0019",
+            "pinyin": "daqing",
+            "name": "大庆"
+          }, {
+            "id": "0020",
+            "pinyin": "datong",
+            "name": "大同"
+          }
+        ],
+        "E": [
+          {
+            "id": "0021",
+            "pinyin": "eerduosi",
+            "name": "鄂尔多斯"
+          }, {
+            "id": "0022",
+            "pinyin": "ezhou",
+            "name": "鄂州"
+          }, {
+            "id": "0023",
+            "pinyin": "enshi",
+            "name": "恩施"
+          }
+        ],
+        "F": [
+          {
+            "id": "0024",
+            "pinyin": "fangchenggang",
+            "name": "防城港"
+          }, {
+            "id": "0025",
+            "pinyin": "foshan",
+            "name": "佛山"
+          }, {
+            "id": "0026",
+            "pinyin": "fuzhou",
+            "name": "福州"
+          }, {
+            "id": "0027",
+            "pinyin": "fushun",
+            "name": "抚顺"
+          }, {
+            "id": "0028",
+            "pinyin": "fuzhou",
+            "name": "抚州"
+          }
+        ], 
+        "G": [
+          {
+            "id": "0029",
+            "pinyin": "gannan",
+            "name": "甘南"
+          }, {
+            "id": "0030",
+            "pinyin": "ganzizhou",
+            "name": "甘孜州"
+          }, {
+            "id": "0031",
+            "pinyin": "ganzhou",
+            "name": "赣州"
+          }, {
+            "id": "0032",
+            "pinyin": "gaoxiong",
+            "name": "高雄"
+          }, {
+            "id": "0033",
+            "pinyin": "guyuan",
+            "name": "固原"
+          }
+        ], 
+        "H": [
+          {
+            "id": "0034",
+            "pinyin": "haerbin",
+            "name": "哈尔滨"
+          }, {
+            "id": "0035",
+            "pinyin": "hami",
+            "name": "哈密"
+          }, {
+            "id": "0036",
+            "pinyin": "haibei",
+            "name": "海北藏族自治州"
+          }, {
+            "id": "0037",
+            "pinyin": "haidong",
+            "name": "海东地区"
+          }, {
+            "id": "0038",
+            "pinyin": "haikou",
+            "name": "海口"
+          }
+        ]
+      }
+    },
+    "foreign": {
+      "hotCity": [
+        {"id": "0001", "name": "普吉岛"}, 
+        {"id": "0002", "name": "清迈"},
+        {"id": "0003", "name": "香港"},
+        {"id": "0004", "name": "东京"},
+        {"id": "0005", "name": "台北"},
+        {"id": "0006", "name": "澳门"},
+        {"id": "0007", "name": "巴厘岛"},
+        {"id": "0008", "name": "曼谷"},
+        {"id": "0009", "name": "芭提雅"},
+        {"id": "0010", "name": "凯恩斯"},
+        {"id": "0011", "name": "首尔"},
+        {"id": "0012", "name": "新加坡"},
+        {"id": "0013", "name": "济州岛"},
+        {"id": "0014", "name": "迪拜"},
+        {"id": "0015", "name": "沙巴"},
+        {"id": "0016", "name": "苏梅岛"}
+      ],
+      "cityList": {
+        "A": [
+          {
+            "id": "0001",
+            "pinyin": "aokelan",
+            "name": "奥克兰"
+          }, {
+            "id": "0002",
+            "pinyin": "aosilu",
+            "name": "奥斯陆"
+          }, {
+            "id": "0003",
+            "pinyin": "aolanduo",
+            "name": "奥兰多"
+          }, {
+            "id": "0004",
+            "pinyin": "ankala",
+            "name": "安卡拉"
+          }, {
+            "id": "0005",
+            "pinyin": "ankeleiqi",
+            "name": "安克雷奇"
+          }
+        ],
+        "B": [
+          {
+            "id": "0006",
+            "pinyin": "bokeli",
+            "name": "伯克利"
+          }, {
+            "id": "0007",
+            "pinyin": "boerni",
+            "name": "伯尔尼"
+          }, {
+            "id": "0008",
+            "pinyin": "beiaierlan",
+            "name": "北爱尔兰"
+          }, {
+            "id": "0009",
+            "pinyin": "beisumendala",
+            "name": "北苏门答腊"
+          }, {
+            "id": "0010",
+            "pinyin": "beihaidao",
+            "name": "北海道"
+          }
+        ],
+        "C": [
+          {
+            "id": "0011",
+            "pinyin": "chongsheng",
+            "name": "冲绳"
+          }, {
+            "id": "0012",
+            "pinyin": "changye",
+            "name": "长野"
+          }
+        ],
+        "D" : [
+          {
+            "id": "0016",
+            "pinyin": "dongjing",
+            "name": "东京"
+          }, {
+            "id": "0017",
+            "pinyin": "danbule",
+            "name": "丹布勒"
+          }, {
+            "id": "0018",
+            "pinyin": "duolunduo",
+            "name": "多伦多"
+          }, {
+            "id": "0019",
+            "pinyin": "daban",
+            "name": "大阪"
+          }, {
+            "id": "0020",
+            "pinyin": "daogelasigang",
+            "name": "道格拉斯港"
+          }
+        ],
+        "F": [
+          {
+            "id": "0024",
+            "pinyin": "foluolunsa",
+            "name": "佛罗伦萨"
+          }, {
+            "id": "0025",
+            "pinyin": "fuchayila",
+            "name": "富查伊拉"
+          }, {
+            "id": "0026",
+            "pinyin": "falankefu",
+            "name": "法兰克福"
+          }, {
+            "id": "0027",
+            "pinyin": "fusen",
+            "name": "福森"
+          }, {
+            "id": "0028",
+            "pinyin": "feicheng",
+            "name": "费城"
+          }
+        ], 
+        "G": [
+          {
+            "id": "0029",
+            "pinyin": "guandao",
+            "name": "关岛"
+          }, {
+            "id": "0030",
+            "pinyin": "gangshan",
+            "name": "冈山"
+          }, {
+            "id": "0031",
+            "pinyin": "gujin",
+            "name": "古晋"
+          }, {
+            "id": "0032",
+            "pinyin": "gebenhagen",
+            "name": "哥本哈根"
+          }, {
+            "id": "0033",
+            "pinyin": "guangdao",
+            "name": "广岛"
+          }
+        ], 
+        "H": [
+          {
+            "id": "0034",
+            "pinyin": "huashengdungelunbiyatequ",
+            "name": "华盛顿哥伦比亚特区"
+          }, {
+            "id": "0035",
+            "pinyin": "huaxin",
+            "name": "华欣"
+          }, {
+            "id": "0036",
+            "pinyin": "hegeshan",
+            "name": "和歌山"
+          }, {
+            "id": "0037",
+            "pinyin": "hawana",
+            "name": "哈瓦那"
+          }, {
+            "id": "0038",
+            "pinyin": "huilingdun",
+            "name": "惠灵顿"
+          }
+        ]
+      }
+    }
+  }
+}
