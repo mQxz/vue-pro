@@ -6,7 +6,9 @@
   			<i class="icon-search iconfont">&#xe68d;</i>
   			<span class="single-line">输入城市/景点/游玩主题</span>
   		</div>
-  		<div class="city">北京</div>
+      <router-link to="cityChoose">
+  		  <div class="city">{{city}}</div>
+      </router-link>
   	</header>
     <div>
     	<swiper :options="swiperOption">
@@ -59,9 +61,14 @@
           <h2 class="modtitle">热销推荐</h2>
           <div class="hot-con">
             <ul class="hotlist">
+<<<<<<< HEAD
              <router-link to="./particulars"> 
               <li class="hot-prod border-bottom" v-for="(hotItem, index) of hotList" :key="hotItem.id">
                 <router-link to="/particulars">
+=======
+              <li class="hot-prod border-bottom" v-for="(hotItem, index) of hotList" :key="hotItem.id" @click="handleClickSkip(hotItem.id)">
+                <a href="#">
+>>>>>>> origin/master
                   <div class="hotlist-img-con">
                     <img :src="hotItem.imgSrc" class="hotlist-img">
                   </div>
@@ -90,7 +97,7 @@
         <div class="productList">
           <div class="product-item" v-for="product of productList" :key="product.id">
             <div class="product-img-con">
-              <img :src="product.imgSrc" class="product-img">
+              <img :src="product.imgSrc" class="product-img" @click="handleSkipPage(product.id)">
             </div>
             <div class="product-info">
               <p class="product-name">{{product.title}}</p>
@@ -145,68 +152,87 @@
 </template>
 
 <script>
-export default {
-  name: 'Index',
-  data () {
-    return {
-      swiperInfo: [],
-      iconsInfo: [],
-      activityInfo: [],
-      hotList: [],
-      productList: [],
-      listentrance: {
-        location: '定位失败',
-        sale: '5折泡温泉'
-      },
-      swiperOption: {
-        autoplay: 3000,
-        direction: 'horizontal',
-        pagination: '.swiper-pagination',
-        loop: true
-      },
-      iconsOption: {
-        pagination: '.swiper-pagination'
-      }
-    }
-  },
-
-  computed: {
-    pages () {
-      const pages = []
-      this.iconsInfo.forEach((item, index) => {
-        let page = Math.floor(index / 8)
-        if (!pages[page]) {
-          pages[page] = []
+  import { mapState } from 'vuex'
+  export default {
+    name: 'Index',
+    data () {
+      return {
+        swiperInfo: [],
+        iconsInfo: [],
+        activityInfo: [],
+        hotList: [],
+        productList: [],
+        listentrance: {
+          location: '定位失败',
+          sale: '5折泡温泉'
+        },
+        swiperOption: {
+          autoplay: 3000,
+          direction: 'horizontal',
+          pagination: '.swiper-pagination',
+          loop: true
+        },
+        iconsOption: {
+          pagination: '.swiper-pagination'
         }
-        pages[page].push(item)
-      })
-      return pages
-    }
-  },
-
-  methods: {
-    getIndexDate () {
-      this.$http.get('/static/index.json')
-        .then(this.handleGetIndexDateSucc.bind(this))
+      }
     },
 
-    handleGetIndexDateSucc (res) {
-      const body = res.body
-      if (body.data.swiper) {
-        this.swiperInfo = body.data.swiper
-        this.iconsInfo = body.data.icons
-        this.activityInfo[0] = `background: url(../../src/assets/img/index/${body.data.activity[0]}) no-repeat center center;background-size: auto 100%;`
-        this.activityInfo[1] = `background: url(../../src/assets/img/index/${body.data.activity[1]}) no-repeat center center;background-size: auto 100%;`
-        this.hotList = body.data.hots
-        this.productList = body.data.product
-      }
-    }
-  },
+    computed: {
 
-  created () {
-    this.getIndexDate()
+      // ...mapState(['city']),
+      ...mapState({
+        city: 'city'
+      }),
+
+      pages () {
+        const pages = []
+        this.iconsInfo.forEach((item, index) => {
+          let page = Math.floor(index / 8)
+          if (!pages[page]) {
+            pages[page] = []
+          }
+          pages[page].push(item)
+        })
+        return pages
+      }
+    },
+
+    methods: {
+      getIndexDate () {
+        this.$http.get('/static/index.json')
+          .then(this.handleGetIndexDateSucc.bind(this))
+      },
+
+      handleGetIndexDateSucc (res) {
+        const body = res.body
+        if (body.data.swiper) {
+          this.swiperInfo = body.data.swiper
+          this.iconsInfo = body.data.icons
+          this.activityInfo[0] = `background: url(../../src/assets/img/index/${body.data.activity[0]}) no-repeat center center;background-size: auto 100%;`
+          this.activityInfo[1] = `background: url(../../src/assets/img/index/${body.data.activity[1]}) no-repeat center center;background-size: auto 100%;`
+          this.hotList = body.data.hots
+          this.productList = body.data.product
+        }
+      },
+
+      handleClickSkip (id) {
+        if (id === '0001') {
+          this.$router.push({name: 'detailsPage'})
+        }
+      },
+
+      handleSkipPage (id) {
+        if (id === '0001') {
+          this.$router.push({name: 'hotSpring'})
+        }
+      }
+    },
+
+    created () {
+      this.getIndexDate()
+    }
   }
-}
 </script>
 <style scoped>
   .page-main {
@@ -254,6 +280,7 @@ export default {
   	white-space: nowrap;
   	overflow: hidden;
   	text-overflow: clip;
+    color: #fff;
   }
   .city:after {
   	position: absolute;

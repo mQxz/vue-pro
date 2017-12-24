@@ -1,0 +1,225 @@
+{
+	"ret": true,
+	"banner": "//img1.qunarzz.com/piao/fusion/1710/a5/30bea424f8862102.jpg_640x361_929a4c2a.jpg",
+	"listContent": [{
+		"id": "0001",
+		"imgUrl": "//img1.qunarzz.com/sight/p0/1507/d5/a9c70a3b26bd90e2e9274eae72ae6727.water.jpg_200x180_ddf33dd2.jpg",
+		"listLocation": "北京",
+		"listName": "【特权日】北京九华温泉文化主题公园- 晚场温泉票（17:00-23:00使用",
+		"lighttxtListLi1": "露天温泉",
+		"lighttxtListLi2": "温柔之乡",
+		"priceNum": "78",
+		"listCost": "票面价&yen;300",
+		"listBtn": "马上抢"
+	},{
+		"id": "0002",
+		"imgUrl": "//img1.qunarzz.com/sight/p0/201303/04/50b65ba27d711f92c8d65eac.jpg_200x180_19d66131.jpg",
+		"listLocation": "北京",
+		"listName": "北京红栌山庄温泉门票",
+		"lighttxtListLi1": "儿童乐园",
+		"lighttxtListLi2": "性价比高",
+		"priceNum": "88",
+		"listCost": "票面价&yen;280",
+		"listBtn": "马上抢"
+	}],
+	"hotSpringDetails": [{
+		"granientWords": "山水温泉",
+		"optionClassify": [{
+			"li": "情侣"
+		},{
+			"li": "家庭"
+		},{
+			"li": "上班族"
+		},{
+			"li": "学生"
+		}],
+		"optionText": "远离城市的喧嚣，在私密的山水温泉中恢复活力。泡汤同时还能享受美景和清新的空气，治愈一周疲惫的你。",
+		"travelDescribe": [{
+			"imgUrl": "//img1.qunarzz.com/sight/p0/1411/43/dea8b51719a4a69b68777baa68c146e4.water.jpg_600x237_3c8b55d2.jpg",
+			"travelTheme": "春晖园温泉度假村",
+			"price": "112",
+			"ul": [{
+				"li": "私汤"
+			},{
+				"li": "景色优美"
+			},{
+				"li": "SPA"
+			}],
+			"traveDescribe": "j*7：服务态度超级好，设施很齐全，什么都有，团购价格很合理，这是一次超级好的温泉度假，下次还会来这里！"
+		},{
+			"imgUrl": "//img1.qunarzz.com/sight/p0/1507/d5/a9c70a3b26bd90e2e9274eae72ae6727.water.jpg_600x237_f2a6382e.jpg",
+			"travelTheme": "九华山庄温泉主题公园",
+			"price": "128",
+			"ul": [{
+				"li": "泥灸"
+			},{
+				"li": "泳池"
+			},{
+				"li": "环境好"
+			}],
+			"traveDescribe": "c*3：取票方便，环境很好，室内外各有一个游泳池，室外的水深1.6米，室内水深1.8米。个人感觉室外游的比较舒服。"
+		},{
+			"imgUrl": "//img1.qunarzz.com/piao/fusion/1710/be/d25057d66da24d02.jpg_600x237_d65ad838.jpg",
+			"travelTheme": "静之湖温泉",
+			"price": "107",
+			"ul": [{
+				"li": "VIP私宅"
+			},{
+				"li": "餐饮"
+			}],
+			"traveDescribe": "j*8：温泉池室内室外都有，玫瑰、薰衣草、芦荟、啤酒、牛奶，各种功能的汤池任你选择，孩子的浅池里还有海洋球可以玩。泡完还有香薰屋、盐浴可以休息。"
+		},{
+			"imgUrl": "//img1.qunarzz.com/sight/p0/1510/3a/3afa277c0f0bd43790.img.jpg_600x237_5256f5da.jpg",
+			"travelTheme": "瑞麟湾温泉",
+			"price": "138",
+			"ul": [{
+				"li": "住宿"
+			},{
+				"li": "私汤"
+			},{
+				"li": "SPA"
+			}],
+			"traveDescribe": "w*4：价格很给力，我们定的住宿+温泉，性价比还不错，主要是私密性比较好，私汤感觉更干净卫生些。"
+		}]
+	},{
+		"granientWords": "养生温泉",
+		"optionClassify": [{
+			"li": "家庭"
+		}],
+		"optionText": "快节奏生活中，很多人都是亚健康，精选地区特有矿物温泉，水质蕴含充分微量元素，养性怡情两不误！",
+		"travelDescribe": [{
+			"imgUrl": "//img1.qunarzz.com/piao/fusion/1710/c0/713852790f86e002.jpg_600x237_9af43732.jpg",
+			"travelTheme": "顺景温泉",
+			"price": "168",
+			"ul": [{
+				"li": "养生餐"
+			},{
+				"li": "泳池"
+			},{
+				"li": "酒吧"
+			}],
+			"traveDescribe": "C*2：真的很不错！温度适宜，水温很热，水很干净，景色也不错，服务很好，很适合带孩子去玩，一次很愉快的出行，全家都很开心！"
+		},{
+			"imgUrl": "//img1.qunarzz.com/sight/p0/1510/20/2048e6567ed9f6ea90.img.jpg_600x237_dabe4d2c.jpg",
+			"travelTheme": "北京华清温泉",
+			"price": "83",
+			"ul": [{
+				"li": "环境赞"
+			},{
+				"li": "室内外"
+			},{
+				"li": "服务好"
+			}],
+			"traveDescribe": "w*2：服务很好，很一流，环境不错，推荐附近的朋友过来。"
+		},{
+			"imgUrl": "//img1.qunarzz.com/sight/p0/1503/dc/dc651cd2e01fb900.img.jpg_600x237_c6d65aea.jpg",
+			"travelTheme": "南宫温泉水世界",
+			"price": "55",
+			"ul": [{
+				"li": "住宿"
+			},{
+				"li": "儿童乐园"
+			},{
+				"li": "水上项目"
+			}],
+			"traveDescribe": "a*9：一家子去的，孩子特别开心，在里面一玩儿就是4个小时，回来的时候说没玩儿够。"
+		}]
+	},{
+		"granientWords": "亲子温泉",
+		"optionClassify": [{
+			"li": "家庭"
+		},{
+			"li": "上班族"
+		},{
+			"li": "情侣"
+		}],
+		"optionText": "带娃父母的最佳选择。宝宝玩的开心安全，爸妈泡温泉轻松省心，快陪宝宝度过一个完美周末吧！",
+		"travelDescribe": [{
+			"imgUrl": "//img1.qunarzz.com/sight/p0/201408/07/7bfb818448c86bec2df764e5896739cd.jpg_600x237_c2766229.jpg",
+			"travelTheme": "美人鱼温泉宫",
+			"price": "78",
+			"ul": [{
+				"li": "中药浴"
+			},{
+				"li": "瘦身泉"
+			}],
+			"traveDescribe": "s*3：温泉的药疗特色值得推荐，孩子玩的很高兴，在水池中爬行，呵呵腿都磨掉皮了还不知道呢，玩的真是开心，不是因为饿了还不回家呢，下次还会再来。"
+		},{
+			"imgUrl": "//img1.qunarzz.com/sight/p0/1611/96/96c7b547622c8334a3.img.jpg_600x237_9b5ee718.jpg",
+			"travelTheme": "西山温泉",
+			"price": "218",
+			"ul": [{
+				"li": "娱乐设施"
+			},{
+				"li": "儿童乐园"
+			},{
+				"li": "服务一流"
+			}],
+			"traveDescribe": "d*7：强烈推荐藏药温泉。藏医先把脉，然后指定泡池半个小时内，汗立马被蒸出，很舒服。整体环境布局都很有西藏特色，服务人员也全是西藏本土的帅男靓女。"
+		},{
+			"imgUrl": "//img1.qunarzz.com/piao/fusion/1710/39/4eefca0fc28ce802.jpg_600x237_4d477d75.jpg",
+			"travelTheme": "温都水城",
+			"price": "128",
+			"ul": [{
+				"li": "鱼疗"
+			},{
+				"li": "汗蒸"
+			}],
+			"traveDescribe": "x*2：场地很大，有个大的泳池，会定时的造浪，儿子最喜欢的，就是太空盆，大人的纠结半天没敢玩，累了可以去养生馆泡温泉，水很干净不冷，玩的很开心！"
+		}]
+	},{
+		"granientWords": "养生温泉",
+		"optionClassify": [{
+			"li": "家庭"
+		}],
+		"optionText": "快节奏生活中，很多人都是亚健康，精选地区特有矿物温泉，水质蕴含充分微量元素，养性怡情两不误！",
+		"travelDescribe": [{
+			"imgUrl": "//img1.qunarzz.com/piao/fusion/1710/c0/713852790f86e002.jpg_600x237_9af43732.jpg",
+			"travelTheme": "顺景温泉",
+			"price": "168",
+			"ul": [{
+				"li": "养生餐"
+			},{
+				"li": "泳池"
+			},{
+				"li": "酒吧"
+			}],
+			"traveDescribe": "C*2：真的很不错！温度适宜，水温很热，水很干净，景色也不错，服务很好，很适合带孩子去玩，一次很愉快的出行，全家都很开心！"
+		},{
+			"imgUrl": "//img1.qunarzz.com/sight/p0/1510/20/2048e6567ed9f6ea90.img.jpg_600x237_dabe4d2c.jpg",
+			"travelTheme": "北京华清温泉",
+			"price": "83",
+			"ul": [{
+				"li": "环境赞"
+			},{
+				"li": "室内外"
+			},{
+				"li": "服务好"
+			}],
+			"traveDescribe": "w*2：服务很好，很一流，环境不错，推荐附近的朋友过来。"
+		},{
+			"imgUrl": "//img1.qunarzz.com/sight/p0/1503/dc/dc651cd2e01fb900.img.jpg_600x237_c6d65aea.jpg",
+			"travelTheme": "南宫温泉水世界",
+			"price": "55",
+			"ul": [{
+				"li": "住宿"
+			},{
+				"li": "儿童乐园"
+			},{
+				"li": "水上项目"
+			}],
+			"traveDescribe": "a*9：一家子去的，孩子特别开心，在里面一玩儿就是4个小时，回来的时候说没玩儿够。"
+		}]
+	},{
+		"granientWords": "省心一日游",
+		"optionClassify": [{
+			"li": "家庭"
+		},{
+			"li": "上班族"
+		},{
+			"li": "情侣"
+		}],
+		"optionText": "再也不用担心出去玩太麻烦了，【去哪儿门票】为你精选了靠谱温泉一日游！拎包就走，想去哪儿就去哪儿！"
+		
+	}]
+}
