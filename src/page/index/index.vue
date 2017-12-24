@@ -61,14 +61,8 @@
           <h2 class="modtitle">热销推荐</h2>
           <div class="hot-con">
             <ul class="hotlist">
-<<<<<<< HEAD
              <router-link to="./particulars"> 
-              <li class="hot-prod border-bottom" v-for="(hotItem, index) of hotList" :key="hotItem.id">
-                <router-link to="/particulars">
-=======
               <li class="hot-prod border-bottom" v-for="(hotItem, index) of hotList" :key="hotItem.id" @click="handleClickSkip(hotItem.id)">
-                <a href="#">
->>>>>>> origin/master
                   <div class="hotlist-img-con">
                     <img :src="hotItem.imgSrc" class="hotlist-img">
                   </div>
@@ -81,7 +75,6 @@
                     <em class="price-num">{{hotItem.price}}</em>
                     <span class="price-text">起</span>
                   </div>
-                </router-link>
               </li>
              </router-link>
             </ul>
