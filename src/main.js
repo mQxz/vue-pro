@@ -6,11 +6,7 @@ import './assets/style/border.css'
 import VueSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 import './assets/style/iconfont/iconfont.css'
-<<<<<<< HEAD
-import './assets/style/iconfont-particulars/iconfont.css'
-=======
 import './assets/style/iconfont-hotSpring/iconfont.css'
->>>>>>> origin/master
 import VueResource from 'vue-resource'
 import FastClick from 'fastclick'
 import store from './store/'

@@ -17,18 +17,15 @@ export default new Router({
       path: '/',
       name: 'index',
       component: Index
-    },
-    {
+    }, {
       path: '/particulars',
       name: 'particulars',
       component: Particulars
-    },
-    {
+    }, {
       path: '/detailsPage',
       name: 'detailsPage',
       component: DetailsPage
-    },
-    {
+    }, {
       path: '/hotSpring',
       name: 'hotSpring',
       component: HotSpring
