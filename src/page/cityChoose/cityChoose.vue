@@ -84,7 +84,7 @@
         this.inputIsActive = this.noticeFlag = false
       },
       getPageData () {
-        this.$http.get('/api/city')
+        this.$http.get('/static/cityChoose.json')
         .then(this.handleGetPageDateSucc.bind(this))
       },
       handleGetPageDateSucc (res) {

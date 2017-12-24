@@ -39,9 +39,9 @@
         const isAndroid = osType.indexOf('Android') > -1 || osType.indexOf('Adr') > -1
         const isiOS = !!osType.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
         if (isAndroid) {
-          alert('跳转安卓商店下载')
+          location.href = 'https://touch.qunar.com/h5/client?bd_source=qunar&sScheme=0&scheme=home&touchUrl=download?bd_source=qunar'
         } else if (isiOS) {
-          alert('跳转苹果商店下载')
+          location.href = 'https://touch.qunar.com/h5/client?bd_source=qunar&sScheme=0&scheme=home&touchUrl=download?bd_source=qunar'
         }
       }
     }

@@ -3,8 +3,10 @@
     <div class="back iconfont">&#xe624;</div>
     <h1 class="header-title">银联立减</h1>
     <div class="header-index-con">
-      <span class="iconfont header-logo">&#xe67c;</span>
-      首页
+      <router-link to="/" class="link">
+        <span class="iconfont header-logo">&#xe67c;</span>
+        首页
+      </router-link>
     </div>
   </div>
 </template>
@@ -45,5 +47,8 @@
     line-height: 1;
     padding-top: .1rem;
     font-size: .4rem;
+  }
+  .link {
+    color: #666;
   }
 </style>
