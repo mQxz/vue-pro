@@ -8,7 +8,7 @@
 				<span class="classify-subtitle">(可多选)</span>
 			</h3>
 			<div class="classify-list"  :class="{'classify-unfold': isError, 'classify-unfold1': isError}" ref="navClassify">
-				<ul class="classify-list-con clearfix"  >
+				<ul class="classify-list-con clearfix" :class="{'list-unfold': isError, 'list-unfold1': isError}"  >
 					<li class="classify-list-item" v-for="item in classify" :key="item.id">{{item.name}}</li>
 				</ul>
 			</div>
@@ -31,8 +31,7 @@
         ok: false,
         titleShow: false,
         isError: false,
-        topmodal: false,
-        scrollX: true
+        topmodal: false
       }
     },
     methods: {
@@ -110,7 +109,6 @@
 	}
 	.classify-title::after {
 		content: '';
-		width: 100%;
 		height: 1px;
 		position: absolute;
 		top: .8rem;

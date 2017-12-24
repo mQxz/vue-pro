@@ -1,85 +1,85 @@
 <template>
-	<div>
-		<div class="modal-box" v-show="modal" @click="handleModalClick"></div>
-		
-	<div class="flexbox-wrap" v-show="footerFlex">
-		<div class="flexbox">
-			<ul class="flex-list">
-				<li class="flex-item " @click="handleClassifyClick">
-					<div class="all-classify iconfont">&#xe60b;</div>
-					<div class="all-classifyName">全部分类</div>
-				</li>
-				<li class="flex-item"  @click="handleChooseClick">
-					<div class="all-classify iconfont">&#xe6c4;</div>
-					<div class="all-classifyName">筛选</div>
-				</li>
-				<li class="flex-item"  @click="handleRecommendClick">
-					<div class="all-classify iconfont">&#xe641;</div>
-					<div class="all-classifyName">推荐排序</div>
-				</li>
-			</ul>
+<div>
+<div class="modal-box" v-show="modal" @click="handleModalClick"></div>
+	
+<div class="flexbox-wrap" v-show="footerFlex">
+	<div class="flexbox">
+		<ul class="flex-list">
+			<li class="flex-item " @click="handleClassifyClick">
+				<div class="all-classify iconfont">&#xe60b;</div>
+				<div class="all-classifyName">全部分类</div>
+			</li>
+			<li class="flex-item"  @click="handleChooseClick">
+				<div class="all-classify iconfont">&#xe6c4;</div>
+				<div class="all-classifyName">筛选</div>
+			</li>
+			<li class="flex-item"  @click="handleRecommendClick">
+				<div class="all-classify iconfont">&#xe641;</div>
+				<div class="all-classifyName">推荐排序</div>
+			</li>
+		</ul>
 
-			<div class="classify-con" v-show="show">
-				<div class="classify-flexbox">
-					<div class="flexbox-left" ref="classifyBox">
-						<ul class="flexbox-left-list">
-							<li class="flexbox-left-item" v-for="item in allClassify" :key="item.id">
-							{{item.name}}<span>{{item.num}}</span>
-							</li>
-						</ul>
-					</div>
-					<div class="flexbox-right"></div>
-				</div>
-			</div>
-
-			<div class="classify-con filter-con" v-show="Isshow">
-				<div class="classify-flexbox filter-flexbox">
-					<div class="flexbox-left filter-left" >
-						<ul class="flexbox-left-list">
-							<li class="flexbox-left-item filter-left-item" @click="handleDestinationClick">
-							 目的地
-							</li>
-							<li class="flexbox-left-item filter-left-item" @click="handleFromplaceClick">
-							 出发地
-							</li>
-						</ul>
-					</div>
-					<div class="flexbox-right filter-right" ref="filterBox">
-						<ul class="filter-right-tolist" v-show="tolist">
-							<li class="flexbox-left-item filter-right-item">
-							 全部目的地
-							</li>
-							<li class="flexbox-left-item filter-right-item" v-for="item in destination" :key="item.id">
-							 {{item.name}}
-							</li>
-						</ul>
-
-						<ul class="filter-right-fromlist" v-show="fromlist">
-							<li class="flexbox-left-item filter-right-item">
-							 全部出发地
-							</li>
-							<li class="flexbox-left-item filter-right-item">
-							 北京
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-			<div class="classify-con sugg-con" v-show="ok">
-				 <div class="flexbox-left " ref="lastBox">
-					<ul class="flexbox-left-list sugg-list">
-						<li class="flexbox-left-item sugg-item" v-for="item in suggInfo" :key="item.id">
-							{{item.item}}
+		<div class="classify-con" v-show="show">
+			<div class="classify-flexbox">
+				<div class="flexbox-left" ref="classifyBox">
+					<ul class="flexbox-left-list">
+						<li class="flexbox-left-item" v-for="item in allClassify" :key="item.id">
+						{{item.name}}<span>{{item.num}}</span>
 						</li>
-						<li class="flexbox-left-item sugg-item"></li>
+					</ul>
+				</div>
+				<div class="flexbox-right"></div>
+			</div>
+		</div>
+
+		<div class="classify-con filter-con" v-show="Isshow">
+			<div class="classify-flexbox filter-flexbox">
+				<div class="flexbox-left filter-left" >
+					<ul class="flexbox-left-list">
+						<li class="flexbox-left-item filter-left-item" @click="handleDestinationClick">
+						 目的地
+						</li>
+						<li class="flexbox-left-item filter-left-item" @click="handleFromplaceClick">
+						 出发地
+						</li>
+					</ul>
+				</div>
+				<div class="flexbox-right filter-right" ref="filterBox">
+					<ul class="filter-right-tolist" v-show="tolist">
+						<li class="flexbox-left-item filter-right-item">
+						 全部目的地
+						</li>
+						<li class="flexbox-left-item filter-right-item" v-for="item in destination" :key="item.id">
+						 {{item.name}}
+						</li>
+					</ul>
+
+					<ul class="filter-right-fromlist" v-show="fromlist">
+						<li class="flexbox-left-item filter-right-item">
+						 全部出发地
+						</li>
+						<li class="flexbox-left-item filter-right-item">
+						 北京
+						</li>
 					</ul>
 				</div>
 			</div>
-
 		</div>
+
+		<div class="classify-con sugg-con" v-show="ok">
+			 <div class="flexbox-left " ref="lastBox">
+				<ul class="flexbox-left-list sugg-list">
+					<li class="flexbox-left-item sugg-item" v-for="item in suggInfo" :key="item.id">
+						{{item.item}}
+					</li>
+					<li class="flexbox-left-item sugg-item"></li>
+				</ul>
+			</div>
+		</div>
+
 	</div>
-	</div>
+</div>
+</div>
 
 </template>
 	
@@ -156,8 +156,14 @@ export default {
       let i = this.arr.length - 1
       if (this.arr[i] < this.arr[i - 1]) {
         this.footerFlex = true
+      } else if (this.show || this.Isshow || this.ok) {
+        this.footerFlex = true
       } else {
         this.footerFlex = false
+        this.modal = false
+        this.show = false
+        this.Isshow = false
+        this.ok = false
       }
     }
   },
@@ -242,6 +248,7 @@ export default {
 		left: 0;
 		bottom: .8rem;
 		background: #fff;
+		overflow: hidden;
 	}
 	.classify-flexbox {
 		width: 100%;
