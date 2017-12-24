@@ -59,6 +59,7 @@
           <h2 class="modtitle">热销推荐</h2>
           <div class="hot-con">
             <ul class="hotlist">
+             <router-link to="./particulars"> 
               <li class="hot-prod border-bottom" v-for="(hotItem, index) of hotList" :key="hotItem.id">
                 <a href="#">
                   <div class="hotlist-img-con">
@@ -75,6 +76,7 @@
                   </div>
                 </a>
               </li>
+             </router-link>
             </ul>
             <div class="modmore">
               <a href="#">查看所有产品</a>

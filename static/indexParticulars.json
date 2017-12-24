@@ -1,0 +1,112 @@
+{
+	"ret": true,
+	"data": {
+	  "scenic": [
+	  	{
+	  	  "id": "00001",
+	      "adres": "北京市东城区景山前街4号查看景点简介及开放时间",
+	      "des": "查看景点简介及开放时间查看景点简介及开放时间"
+	    }
+	  ],
+	  "recommend": [
+	    {
+	      "id": "00002",
+	      "title": "天安门故宫珍宝馆+八达岭+颐和园+恭王府联票无线耳麦人工讲解",
+	      "price": "27"
+	    },
+	    {
+	      "id": "00003",
+	      "title": "【5大景点】广场+故宫+八达岭长城+鸟巢水立方，北京一日游",
+	      "price": "148"
+	    }
+	  ],
+	"ticketmes": [
+      {
+        "id": "0006",
+        "title": "故宫当日票",
+        "amnum": "40",
+        "AgencyNameinfo": "旅游啦",
+        "AgencyNameinfo1": "去哪儿网直销",
+        "SurroundBoxprice": "40"
+      },
+      {
+        "id": "0007",
+        "title": "故宫成人票",
+        "amnum": "40",
+        "AgencyNameinfo": "旅游啦",
+        "AgencyNameinfo1": "去哪儿网直销",
+        "SurroundBoxprice": "40"
+      },
+      {
+        "id": "0008",
+        "title": "故宫学生票",
+        "amnum": "40",
+        "AgencyNameinfo": "旅游啦",
+        "AgencyNameinfo1": "去哪儿网直销",
+        "SurroundBoxprice": "40"
+      },
+      {
+        "id": "0009",
+        "title": "故宫老人票",
+        "amnum": "40",
+        "AgencyNameinfo": "旅游啦",
+        "AgencyNameinfo1": "去哪儿网直销",
+        "SurroundBoxprice": "40"
+      }
+    ],
+  "usercomment": [
+      {
+        "id": "0010",
+        "userName": "h*2-2017-11-26",
+        "userDesc": "整整玩了一天，就这还没逛完这座世界上最伟大最大最完整最震撼的宫殿。取票方便，刷身份证就可以直接进，不排队，游客服务中心提供热水和电视充电插座，点赞！里面的珍宝太多，几天几夜都看不完，票价只要六十块太值了！徜徉在长长红墙下你会感觉时空穿越，物我两忘。就是几座大殿的中间不让围观拍照，只能从侧面看。",
+        "img1": "http://img1.qunarzz.com/piao/fusion/1711/d6/b25ecaa4de9cc602.jpg_228x168_82abc231.jpg",
+        "img2": "http://img1.qunarzz.com/piao/fusion/1711/96/45907c4818998f02.jpg_228x168_1ba732c7.jpg",
+        "img3": "http://img1.qunarzz.com/piao/fusion/1711/e7/dd88426980ca2502.jpg_228x168_94084b8c.jpg",
+        "img4": "http://img1.qunarzz.com/piao/fusion/1711/77/be2d29f0c73b3e02.jpg_228x168_70ced057.jpg",
+        "img5": "http://img1.qunarzz.com/piao/fusion/1711/48/5eb720d741e7ee02.jpg_228x168_836f5a9f.jpg",
+        "img6": "http://img1.qunarzz.com/piao/fusion/1711/15/dc5c35eeecc02602.jpg_228x168_9b1dfb71.jpg"
+      },
+      {
+        "id": "0011",
+        "userName": "C*y-2017-12-19",
+        "userDesc": "是第一次到故宫参观，很大，走不完，16:00就闭馆了，所以建议第一次到故宫的先参观整体建筑，不要一次性买看钟表馆和珍宝馆文物的。里面有电子导游器，20元；也有志愿者讲解员，如果想尽量多走多参观建议用电子导游，如果想深入了解建议跟讲解员参观，另外钟表馆和珍宝馆也有讲解，分几个时段的，具体我忘记了。虽然说是淡季，但人还是挺多的，比如到太和殿，很多人涌到中间一探究竟，或者争相拍个照走人。由于是出差后抽空参观的，只有一下午的时间更不够了，但还是很值得参观的。从南门进去，建议提前购票，用身份证就可以进场了，快速，不用再排队，很方便的。",
+        "img1": "http://img1.qunarzz.com/piao/fusion/1712/f9/5519c8333b1faf02.jpg_228x168_e2887026.jpg",
+        "img2": "http://img1.qunarzz.com/piao/fusion/1712/64/1e8d5a8c2217ca02.jpg_228x168_c371c563.jpg",
+        "img3": "http://img1.qunarzz.com/piao/fusion/1712/d8/d7fd5ad6713de102.jpg_228x168_91dfa8ac.jpg",
+        "img4": "http://img1.qunarzz.com/piao/fusion/1712/80/3ed63d9a239fad02.jpg_228x168_fbd79b00.jpg",
+        "img5": "http://img1.qunarzz.com/piao/fusion/1712/62/76363bdaabd1d802.jpg_228x168_8b98d513.jpg",
+        "img6": "http://img1.qunarzz.com/piao/fusion/1712/ad/99661a4837705802.jpg_228x168_fb677544.jpg"
+      }
+    ],
+  "UserOthers": [
+      {
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1501/f4/f467729126949c3a.water.jpg_228x168_3df8efda.jpg",
+        "adress": "天安门广场",
+        "price": "20",
+        "num": "18896条评论",
+        "place": "北京·东城区"
+      },
+       {
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/201405/12/51b63883c25f5d87af3c08bb016e2bd7.jpg_228x168_ec8547e9.jpg",
+        "adress": "恭王府",
+        "price": "25",
+        "num": "25896条评论",
+        "place": "北京·西城区"
+      },
+      {
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1707/2a/2a0adbeebf6d18bba3.water.jpg_228x168_f7881dc4.jpg",
+        "adress": "北京杜莎夫人蜡像馆",
+        "price": "85.1",
+        "num": "25896条评论",
+        "place": "北京·前大门街"
+      },
+       {
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1602/92/920e47352552c1c990.water.jpg_228x168_bf40890b.jpg",
+        "adress": "天坛公园",
+        "price": "85.1",
+        "num": "25896条评论",
+        "place": "北京·前大门街"
+      }
+   ]
+	} 
+}
