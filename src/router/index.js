@@ -5,6 +5,7 @@ import CityChoose from '@/page/cityChoose/cityChoose'
 import Disney from '@/page/disney/disney'
 import OnedayTour from '@/page/onedayTour/index'
 import Sky from '@/page/sky/index'
+import Unionpay from '@/page/unionpay/unionpay'
 
 Vue.use(Router)
 
@@ -30,6 +31,10 @@ export default new Router({
       path: '/sky',
       name: 'Sky',
       component: Sky
+    }, {
+      path: '/unionpay',
+      name: 'unionpay',
+      component: Unionpay
     }
   ]
 })
