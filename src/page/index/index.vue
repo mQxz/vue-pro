@@ -61,7 +61,7 @@
             <ul class="hotlist">
              <router-link to="./particulars"> 
               <li class="hot-prod border-bottom" v-for="(hotItem, index) of hotList" :key="hotItem.id">
-                <a href="#">
+                <router-link to="/particulars">
                   <div class="hotlist-img-con">
                     <img :src="hotItem.imgSrc" class="hotlist-img">
                   </div>
@@ -74,7 +74,7 @@
                     <em class="price-num">{{hotItem.price}}</em>
                     <span class="price-text">起</span>
                   </div>
-                </a>
+                </router-link>
               </li>
              </router-link>
             </ul>
