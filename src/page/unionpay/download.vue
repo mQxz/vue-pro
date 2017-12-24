@@ -30,7 +30,9 @@
     },
 
     methods: {
-      handleCloseToucstart () {
+      handleCloseToucstart (e) {
+        //点透
+        e.preventDefault();
         this.isClose = false
       },
 
